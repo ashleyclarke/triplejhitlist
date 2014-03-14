@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "TripleJ Hit List player",
+  "description": "Plays youtube videos of the TripleJ hit list",
+  "version": "1.2",
+
+  "permissions": [
+    "http://*.abc.net.au/*",
+    "https://gdata.youtube.com/feeds/api/*"
+  ],
+  "content_scripts":[
+   {
+      "matches": ["http://www.abc.net.au/triplej/music/hit_list.htm"],
+      "js": ["jquery-1.10.2.min.js","popup.js"],
+      "run_at": "document_end"
+   }
+
+  ],
+  "browser_action":{
+    "default_icon": "logo.png"
+    },
+  "permissions":[
+    "tabs"
+  ],
+  "background":{
+    "scripts": ["jjjredirect.js"]
+  },
+
+  "web_accessible_resources":[
+      "jquery-1.10.2.min.map",
+      "banner.png"
+   ]
+}
